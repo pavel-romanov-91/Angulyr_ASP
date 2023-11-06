@@ -1,8 +1,8 @@
-﻿using Angulyr_ASP.Models;
+﻿using HoptSport.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Angulyr_ASP.Controllers
+namespace HoptSport.Controllers
 {
     public class HomeController : Controller
     {
@@ -15,8 +15,12 @@ namespace Angulyr_ASP.Controllers
 
         public IActionResult Index()
         {
-            Product[] products = Product.GetProducts();
-            return View(products);
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
