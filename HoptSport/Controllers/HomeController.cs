@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SportStore.Models;
-using System.Diagnostics;
+using HoptSport.Models.VieModels;
 
 namespace SportStore.Controllers
 {
@@ -16,8 +16,18 @@ namespace SportStore.Controllers
 
 		public IActionResult Index(int productPage = 1)
 		{
-			return View(repository.Products.OrderBy(p=>p.ProductID).
-				Skip((productPage-1)*PageSize).Take(PageSize));
+			return View(new ProductListViewModel
+			{
+				Products =
+				repository.Products.OrderBy(p => p.ProductID)
+				.Skip((productPage - 1) * PageSize).Take(PageSize),
+				PagingInfo = new PagingInfo
+				{
+					CurrentPage = productPage,
+					ItemsPerPage = PageSize,
+					TotalItems = repository.Products.Count()
+				}
+			});
 		}
 		
 
