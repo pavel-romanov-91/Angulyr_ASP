@@ -1,8 +1,8 @@
 ﻿@model IQueryable<Product>
 @foreach (var p in Model ?? Enumerable.Empty<Product>()){
-    <div>
-        <h3>@p.Name</h3>
-        <span>@p.Description</span>
-        <h4>@p.Price.ToString("c")</h4>
-    </div>
+	<div>
+		<h3>@p.Name</h3>
+		<span>@p.Description</span>
+		<h4>@p.Price.ToString("c")</h4>
+	</div>
 }
