@@ -10,6 +10,7 @@ builder.Services.AddDbContext<StoreDbContext>(opts =>
     opts.UseSqlServer(
         builder.Configuration["Connectings:HoptSportConnection"]);
 });
+builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 
 var app = builder.Build();
 
@@ -31,5 +32,6 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+SeedData.EnsurePopulated(app);
 
 app.Run();
