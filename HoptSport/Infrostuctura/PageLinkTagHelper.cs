@@ -1,11 +1,11 @@
-﻿using HoptSport.Models.VieModels;
+﻿using SportStore.Models.VieModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.Routing;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace HoptSport.Infrostuctura
+namespace SportStore.Infrostuctura
 {
     [HtmlTargetElement("div", Attributes = "page-model")]
     public class PageLinkTagHelper : TagHelper

@@ -1,6 +1,6 @@
 ﻿using SportStore.Models;
 
-namespace HoptSport.Models.VieModels
+namespace SportStore.Models.VieModels
 {
     public class ProductListViewModel
     {

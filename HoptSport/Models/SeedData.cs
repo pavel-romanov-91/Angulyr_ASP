@@ -8,21 +8,16 @@ namespace SportStore.Models
 			StoreDbContext context = app.ApplicationServices.CreateScope()
 				.ServiceProvider.GetRequiredService<StoreDbContext>();
 
-			if (context.Database.GetPendingMigrations().Any())
-			{
-				context.Database.Migrate();
-			}
+			if(context.Database.GetPendingMigrations().Any()) {
+				context.Database.Migrate(); }
 
-			if (!context.Products.Any())
-			{
+			if(!context.Products.Any()) {
 				context.Products.AddRange(
-
+					
 					new Product
 					{
-						Name = "Мяч",
-						Description = "Круглый ",
-						Category = "мячи",
-						Price = 100
+						Name= "Мяч",Description = "Круглый ",
+						Category = "мячи",Price =100
 					},
 					new Product
 					{
@@ -72,8 +67,6 @@ namespace SportStore.Models
 			}
 
 		}
-
-
+		}
 	}
-}
 
